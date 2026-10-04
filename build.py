@@ -19,7 +19,7 @@ html=html.replace('<!--GAME_ICONS_EMBED-->',script)
 translations=json.loads((ROOT/'locales/en.json').read_text(encoding='utf-8'))
 i18n='<script>window.DungeonsTranslations='+json.dumps(translations,ensure_ascii=False).replace('<','\\u003c')+';\n'+(ROOT/'i18n.js').read_text(encoding='utf-8')+'\n</script>'
 html=html.replace('<!--I18N_CODE_EMBED-->',i18n)
-html=html.replace('<!--NATIVE_CODE_EMBED-->','<script>\n'+(ROOT/'native.js').read_text(encoding='utf-8')+'\n</script>')
+html=html.replace('<!--NATIVE_CODE_EMBED-->','<script>\n'+(ROOT/'native.js').read_text(encoding='utf-8').replace('/* EFFECT_EDITOR */',(ROOT/'effect-editor.js').read_text(encoding='utf-8'))+'\n</script>')
 html=html.replace('<!--CATALOGUE_CODE_EMBED-->','<script>\n'+(ROOT/'catalogue.js').read_text(encoding='utf-8')+'\n</script>')
 html=html.replace('<!--DESKTOP_CODE_EMBED-->','<script>\n'+(ROOT/'desktop.js').read_text(encoding='utf-8')+'\n</script>')
 (ROOT/'index.html').write_text(html,encoding='utf-8')

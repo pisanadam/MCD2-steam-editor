@@ -23,6 +23,8 @@ No Python installation or separate CMD files are needed for the EXE. Microsoft E
 - Item selection with small icons. **Add item** creates a new unequipped copy of an item already present in the loaded save; edit the copy afterward.
 - Rarity and equipment slots use named dropdowns; game codes are hidden by default.
 - Add or replace a compatible enchantment, choose its verified tier, or remove it while preserving other effects. Talisman tier changes also update their saved effects.
+- Equipment effects and enchantments have icon cards with custom saved values, percentage display and multiplier display. Known bonuses use total multiplier = 1 + bonus (100% bonus = ×2); ratios use 100% = ×1. Chance effects accept 0–100%. Unknown units remain explicit and are never assumed to be damage multipliers.
+- Change an existing equipment effect through an icon picker and choose its catalog tier, then customize its value. Changing the tier replaces its custom value with the catalog default.
 - Item duplication/deletion and undo of the last 20 edits.
 - Inline warnings for invalid values; correct invalid fields before exporting or applying the save.
 - JSON token patching preserves unknown fields, large 64-bit numbers and original file bytes when no edits are made.
@@ -94,3 +96,5 @@ Game images belong to Mojang/Microsoft and their respective rights holders. This
 Program ilk açılışta İngilizcedir. **Settings → Language → Türkçe** seçeneğiyle Türkçe yapabilirsiniz; seçim sonraki açılışta korunur. **Steam kaydını bul** ile karakteri açın, düzenleyin, oyun kapalıyken **Kaydı oyuna uygula** düğmesine basın. Önce otomatik yedek alınır. **Envanter görünümü** bütün eşyaları gösterir; **Eşya ekle** mevcut bir eşyadan kuşanılmamış kopya ekler.
 
 Enchantment slot/tier data and the documented save schema were checked against [Tonystukl/MCD2SaveEdit](https://github.com/Tonystukl/MCD2SaveEdit). Its MIT notice is included in `third-party/MCD2SaveEdit-LICENSE.txt`.
+
+Custom effect values are verified with synthetic save tests. Their in-game persistence and actual combat effect must be checked after loading; the game may cap or recalculate them.
