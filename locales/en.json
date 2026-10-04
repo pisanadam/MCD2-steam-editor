@@ -278,5 +278,9 @@
   "Mevcut etki değiştirilir. Her eşya / etki birleşimi oyunda doğrulanmış değildir.": "Replaces the existing effect. Every item/effect combination has not been verified in game.",
   "Etki ara": "Search effects",
   "Etkiyi uygula": "Apply effect",
-  "Büyü": "Enchantment"
+  "Büyü": "Enchantment",
+  "Bu kademe için özel etki değeri gir.": "Enter a custom effect value for this tier.",
+  "Katalog değeri dolduruldu. İstersen özel değer yazabilirsin.": "Catalog value filled in. You may enter a custom value.",
+  "Bu kademenin kayıt değeri eksik. Özel değer gir; oyunda doğrula.": "The saved value for this tier is unknown. Enter a custom value and check it in game.",
+  "Özel değer gerekli": "Custom value required"
 }

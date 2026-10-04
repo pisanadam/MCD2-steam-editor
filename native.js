@@ -57,29 +57,33 @@ function showItemPicker(mode){
  dialog.addEventListener('close',()=>dialog.remove());document.body.append(dialog);redraw();dialog.showModal();dialog.querySelector('input').focus();
 }
 function enchantmentBatches(path){return n([...path,'ItemData','Effects'])?.children.filter(batch=>val([...batch.path,'TypeTag'])==='SW.Item.Effect.Enchantment')||[]}
-function setEnchantment(rule,tier){
+function setEnchantment(rule,tier,customValue){
+ validatePending();
  const path=n(IP).children[itemIndex].path,list=n([...path,'ItemData','Effects']),slot=iconEntry(val([...path,'ItemData','TypeTag']))?.nativeFields?.slot;
- const choice=rule.tiers.find(t=>t.tier===tier);
- if(!list||!rule.slots.includes(slot)||!choice||typeof choice.value!=='number'||!Number.isFinite(choice.value))throw Error('Bu eşya ve kademe için doğrulanmış büyü verisi yok.');
+ const choice=rule.tiers.find(t=>t.tier===tier),intensity=customValue===undefined?choice?.value:customValue;
+ if(!list||!rule.slots.includes(slot)||!choice||typeof intensity!=='number'||!Number.isFinite(intensity)||Math.abs(intensity)>1000000)throw Error('Bu eşya ve kademe için doğrulanmış büyü verisi yok.');
  const batches=enchantmentBatches(path),effect=batches.length===1?n([...batches[0].path,'EffectsInThisBatch',0]):null;
  if(effect&&n([...batches[0].path,'EffectsInThisBatch']).children.length===1&&['TypeTag','Intensity'].every(k=>n([...effect.path,k]))&&n([...effect.path,'GeneratorData','GeneratorParentTemplate'])){
-  patch([[[...effect.path,'TypeTag'],JSON.stringify(rule.tag)],[[...effect.path,'Intensity'],String(choice.value)],[[...effect.path,'GeneratorData','GeneratorParentTemplate'],JSON.stringify(rule.tag+'.'+tier)]]);return;
+  patch([[[...effect.path,'TypeTag'],JSON.stringify(rule.tag)],[[...effect.path,'Intensity'],String(intensity)],[[...effect.path,'GeneratorData','GeneratorParentTemplate'],JSON.stringify(rule.tag+'.'+tier)]]);return;
  }
- const batch={TypeTag:'SW.Item.Effect.Enchantment',EffectsInThisBatch:[{TypeTag:rule.tag,Intensity:choice.value,Quality:0,EnchantmentPointsInvested:0,GeneratorData:{GeneratorParentTemplate:rule.tag+'.'+tier,Locked:false}}]};
+ const batch={TypeTag:'SW.Item.Effect.Enchantment',EffectsInThisBatch:[{TypeTag:rule.tag,Intensity:intensity,Quality:0,EnchantmentPointsInvested:0,GeneratorData:{GeneratorParentTemplate:rule.tag+'.'+tier,Locked:false}}]};
  const parts=list.children.filter(batch=>val([...batch.path,'TypeTag'])!=='SW.Item.Effect.Enchantment').map(batch=>raw(batch));parts.push(JSON.stringify(batch));patch([[list.path,'['+parts.join(',')+']']]);
 }
 function removeEnchantment(){const path=n(IP).children[itemIndex].path,list=n([...path,'ItemData','Effects']);if(!list)return;patch([[list.path,'['+list.children.filter(batch=>val([...batch.path,'TypeTag'])!=='SW.Item.Effect.Enchantment').map(batch=>raw(batch)).join(',')+']']])}
 function showEnchantmentPicker(){
  try{validatePending()}catch(err){toast(err.message);return}
  const path=n(IP).children[itemIndex]?.path,slot=path&&iconEntry(val([...path,'ItemData','TypeTag']))?.nativeFields?.slot;
- const rules=(icons.enchantmentRules||[]).filter(r=>r.slots.includes(slot)&&r.tiers.some(t=>typeof t.value==='number'&&Number.isFinite(t.value)));
+ const rules=(icons.enchantmentRules||[]).filter(r=>r.slots.includes(slot)&&r.tiers.length);
  if(!rules.length){toast('Bu eşya için desteklenen büyü bulunamadı.');return}
- let selected=null;const dialog=document.createElement('dialog');dialog.className='item-picker';dialog.id='enchantment-picker';dialog.innerHTML='<h2>Büyü ekle / değiştir</h2><p class="muted">Uyumlu büyüyü seç, kademesini belirle ve uygula. Eşyadaki diğer etkiler korunur; mevcut büyü değiştirilir.</p><label for="enchantment-search">Büyü ara</label><input id="enchantment-search" placeholder="Büyü adı"><div class="picker-list"></div><strong id="enchantment-choice">Bir büyü seç.</strong><label for="enchantment-tier">Kademe</label><select id="enchantment-tier" disabled></select><div class="actions"><button id="enchantment-apply" class="primary" disabled>Büyüyü uygula</button><button id="enchantment-cancel">Vazgeç</button></div>';
- const search=dialog.querySelector('input'),list=dialog.querySelector('.picker-list'),tier=dialog.querySelector('select'),apply=dialog.querySelector('#enchantment-apply');
+ let selected=null;const dialog=document.createElement('dialog');dialog.className='item-picker';dialog.id='enchantment-picker';dialog.innerHTML='<h2>Büyü ekle / değiştir</h2><p class="muted">Uyumlu büyüyü seç, kademesini belirle ve uygula. Eşyadaki diğer etkiler korunur; mevcut büyü değiştirilir.</p><label for="enchantment-search">Büyü ara</label><input id="enchantment-search" placeholder="Büyü adı"><div class="picker-list"></div><strong id="enchantment-choice">Bir büyü seç.</strong><label for="enchantment-tier">Kademe</label><select id="enchantment-tier" disabled></select><label for="enchantment-intensity">Etki değeri</label><input id="enchantment-intensity" inputmode="decimal" disabled><p id="enchantment-value-help" class="muted"></p><p id="enchantment-value-error" class="native-error" role="alert"></p><div class="actions"><button id="enchantment-apply" class="primary" disabled>Büyüyü uygula</button><button id="enchantment-cancel">Vazgeç</button></div>';
+ const search=dialog.querySelector('input'),list=dialog.querySelector('.picker-list'),tier=dialog.querySelector('select'),apply=dialog.querySelector('#enchantment-apply'),amount=dialog.querySelector('#enchantment-intensity'),help=dialog.querySelector('#enchantment-value-help'),error=dialog.querySelector('#enchantment-value-error');
+ function validateAmount(showError=true){try{if(!selected||!amount.value.trim())throw Error('Bu kademe için özel etki değeri gir.');const value=Number(numeric(amount.value.trim()));if(Math.abs(value)>1000000)throw Error('Etki değeri sonlu ve -1.000.000 ile 1.000.000 arasında olmalı.');error.textContent='';amount.setAttribute('aria-invalid','false');apply.disabled=false;return value}catch(err){apply.disabled=true;amount.setAttribute('aria-invalid',showError?'true':'false');error.textContent=showError?err.message:'';return null}}
+ function setTier(){const preset=selected?.tiers.find(t=>t.tier===tier.value)?.value,known=typeof preset==='number'&&Number.isFinite(preset);amount.disabled=false;amount.value=known?String(preset):'';help.textContent=known?'Katalog değeri dolduruldu. İstersen özel değer yazabilirsin.':'Bu kademenin kayıt değeri eksik. Özel değer gir; oyunda doğrula.';validateAmount(false)}
+ tier.onchange=setTier;amount.oninput=()=>validateAmount();
  function redraw(){list.innerHTML=rules.filter(r=>(iconEntry(r.tag)?.name||'').toLocaleLowerCase('tr').includes(search.value.toLocaleLowerCase('tr'))).map(r=>`<button class="picker-choice ${selected?.tag===r.tag?'primary':''}" data-enchantment-tag="${h(r.tag)}">${picture(r.tag,true)}<span>${h(iconEntry(r.tag)?.name||'Büyü')}</span></button>`).join('')||'<p class="muted">Büyü bulunamadı.</p>';}
  search.oninput=redraw;dialog.querySelector('#enchantment-cancel').onclick=()=>dialog.close();dialog.addEventListener('close',()=>dialog.remove());
- dialog.addEventListener('click',e=>{const b=e.target.closest('[data-enchantment-tag]');if(!b)return;selected=rules.find(r=>r.tag===b.dataset.enchantmentTag);dialog.querySelector('#enchantment-choice').textContent=iconEntry(selected.tag)?.name||'Büyü';tier.innerHTML=selected.tiers.filter(t=>typeof t.value==='number'&&Number.isFinite(t.value)).map(t=>`<option value="${h(t.tier)}">${h(tierName(t.tier))}</option>`).join('');tier.disabled=false;apply.disabled=false;redraw()});
- apply.onclick=()=>{try{setEnchantment(selected,tier.value);dialog.close()}catch(err){toast(err.message)}};document.body.append(dialog);redraw();dialog.showModal();search.focus();
+ dialog.addEventListener('click',e=>{const b=e.target.closest('[data-enchantment-tag]');if(!b)return;selected=rules.find(r=>r.tag===b.dataset.enchantmentTag);dialog.querySelector('#enchantment-choice').textContent=iconEntry(selected.tag)?.name||'Büyü';tier.innerHTML=selected.tiers.map(t=>`<option value="${h(t.tier)}">${h(tierName(t.tier))}${typeof t.value==='number'&&Number.isFinite(t.value)?'':' · '+h('Özel değer gerekli')}</option>`).join('');tier.value=(selected.tiers.find(t=>typeof t.value==='number'&&Number.isFinite(t.value))||selected.tiers[0]).tier;tier.disabled=false;setTier();redraw()});
+ apply.onclick=()=>{try{const intensity=validateAmount();if(intensity===null)return;setEnchantment(selected,tier.value,intensity);dialog.close()}catch(err){toast(err.message)}};document.body.append(dialog);redraw();dialog.showModal();search.focus();
 }
 function draw(){
  if(!q('#native-content'))return;

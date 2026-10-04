@@ -53,7 +53,9 @@ with sync_playwright() as p:
         assert choice.count()==1
         assert choice.locator('img').evaluate('e=>e.complete&&e.naturalWidth>0')
         choice.click()
-        assert page.locator('#enchantment-tier option').evaluate_all('els=>els.map(e=>e.value)')==['III']
+        assert page.locator('#enchantment-tier option').evaluate_all('els=>els.map(e=>e.value)')==['I','II','III']
+        assert page.locator('#enchantment-tier').input_value()=='III'
+        assert page.locator('#enchantment-intensity').input_value()=='0.5'
         page.locator('#enchantment-apply').click()
         current=page.evaluate('DungeonsNative.getText()')
         batches=json.loads(current)['CharacterSaveV1']['Inventory']['Entries'][0]['ItemData']['Effects']

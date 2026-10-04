@@ -99,4 +99,6 @@ Enchantment slot/tier data and the documented save schema were checked against [
 
 Custom effect values are verified with synthetic save tests. Their in-game persistence and actual combat effect must be checked after loading; the game may cap or recalculate them.
 
-Thundering III is available for melee and ranged weapons. Its saved intensity 0.5 was observed in an existing offline Steam save; I/II are omitted until their saved values are verified. The EXE includes an original generated forge icon (PNG source and multi-resolution ICO in `assets/app/`).
+Thundering III is available for melee and ranged weapons. Its saved intensity 0.5 was observed in an existing offline Steam save; I/II require an explicit custom value because their saved defaults are not verified. The EXE includes an original generated forge icon (PNG source and multi-resolution ICO in `assets/app/`).
+
+All 32 standard enchantments are included in the picker for their compatible slots, including the six with missing upstream intensity data. Every I/II/III tier is visible. Known values are prefilled; tiers without a known saved value require an explicit custom intensity before Apply is enabled. No zero or guessed default is silently written. The two unique-only catalog entries remain intrinsic unique item effects, not standard enchantment books.
