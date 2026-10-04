@@ -1,0 +1,21 @@
+MINECRAFT DUNGEONS II - STEAM DUZENLEYICI
+
+1. ZIP'in tamamini bir klasore cikar. Oyunu kapat.
+2. Kayit-Bul.cmd dosyasina cift tikla.
+   Kaydi arar, yedekler ve karakterle Duzenleyici.html dosyasini acar.
+3. Degerleri degistir; Duzenlenmis kaydi indir dugmesine bas.
+4. Kaydi-Uygula.cmd dosyasini ac ve indirdigin .sav dosyasini sec.
+   Eslesen karakter dosyasinin .bak yedegini alip degisikligi uygular.
+5. Oyunda-Dogrula.cmd dosyasini ac.
+   Karakteri oyunda yukle, ana menuye kaydet ve oyunu kapat.
+   Degisikliklerin oyunun yeniden yazdigi kayitta korunmasi kontrol edilir.
+
+440 gercek Minecraft Dungeons II gorseli pakete gomuludur.
+Kostum gorselleri katalogda gorulebilir; tam 3B karakter sahnesi yoktur.
+Yalnizca cevrimdisi FCharacterSaveV1 JSON desteklenir.
+Son Steam build'inde canli oyun testi bu bulut ortaminda yapilmadi.
+
+Kendi bilgisayarinda Codex ile gercek oyundan test ettirmek icin:
+YEREL-TEST.md dosyasini izle.
+
+Ayrintilar ve kaynaklar: README.md

@@ -1,0 +1,726 @@
+{
+  "source": "https://github.com/Tonystukl/MCD2SaveEdit/blob/main/Source/Data/enchants.json",
+  "rules": [
+    {
+      "tag": "SW.Enchantment.SoulInfusedPotion",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.3
+        },
+        {
+          "tier": "II",
+          "value": 0.45
+        },
+        {
+          "tier": "III",
+          "value": 0.6
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/soulinfusedpotion-69cefebde3/"
+    },
+    {
+      "tag": "SW.Enchantment.Arcane",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 6.0
+        },
+        {
+          "tier": "II",
+          "value": 7.5
+        },
+        {
+          "tier": "III",
+          "value": 9.0
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/arcane-212443a75b/"
+    },
+    {
+      "tag": "SW.Enchantment.PotionBarrier",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 2.0
+        },
+        {
+          "tier": "II",
+          "value": 4.0
+        },
+        {
+          "tier": "III",
+          "value": 6.0
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/potionbarrier-a3c4b9c698/"
+    },
+    {
+      "tag": "SW.Enchantment.MultiPotion",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Chest"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 1.0
+        },
+        {
+          "tier": "II",
+          "value": 2.0
+        },
+        {
+          "tier": "III",
+          "value": 3.0
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/multipotion-c63efccd86/"
+    },
+    {
+      "tag": "SW.Enchantment.PotionSharing",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 2.0
+        },
+        {
+          "tier": "II",
+          "value": 4.0
+        },
+        {
+          "tier": "III",
+          "value": 6.0
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/potionsharing-842940a9de/"
+    },
+    {
+      "tag": "SW.Enchantment.ChainReaction",
+      "slots": [
+        "SW.ItemSlot.Equipment.RangedWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": null
+        },
+        {
+          "tier": "II",
+          "value": null
+        },
+        {
+          "tier": "III",
+          "value": null
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/chainreaction-2baecfcfc8/"
+    },
+    {
+      "tag": "SW.Enchantment.Unstoppable",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": null
+        },
+        {
+          "tier": "II",
+          "value": null
+        },
+        {
+          "tier": "III",
+          "value": null
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/unstoppable-6cf6c2ada2/"
+    },
+    {
+      "tag": "SW.Enchantment.Blowback",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": null
+        },
+        {
+          "tier": "II",
+          "value": null
+        },
+        {
+          "tier": "III",
+          "value": null
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/blowback-548b4c3186/"
+    },
+    {
+      "tag": "SW.Enchantment.CriticalQuiver",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 1.0
+        },
+        {
+          "tier": "II",
+          "value": 3.0
+        },
+        {
+          "tier": "III",
+          "value": 5.0
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/criticalquiver-7eff5db788/"
+    },
+    {
+      "tag": "SW.Enchantment.Dynamo",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.2
+        },
+        {
+          "tier": "II",
+          "value": 0.3
+        },
+        {
+          "tier": "III",
+          "value": 0.4
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/dynamo-82ecde87a1/"
+    },
+    {
+      "tag": "SW.Enchantment.Borealis",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon",
+        "SW.ItemSlot.Equipment.RangedWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 2.0
+        },
+        {
+          "tier": "II",
+          "value": 3.0
+        },
+        {
+          "tier": "III",
+          "value": 4.0
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/borealis-f50bc58683/"
+    },
+    {
+      "tag": "SW.Enchantment.ExpandedQuiver",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 2.0
+        },
+        {
+          "tier": "II",
+          "value": 3.0
+        },
+        {
+          "tier": "III",
+          "value": 4.0
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/expandedquiver-bcc343ce5c/"
+    },
+    {
+      "tag": "SW.Enchantment.FireAspect",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.35
+        },
+        {
+          "tier": "II",
+          "value": 0.45
+        },
+        {
+          "tier": "III",
+          "value": 0.5
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/fireaspect-a38e34479b/"
+    },
+    {
+      "tag": "SW.Enchantment.FrostCrescent",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.1
+        },
+        {
+          "tier": "II",
+          "value": 0.15
+        },
+        {
+          "tier": "III",
+          "value": 0.2
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/frostcrescent-1f2ea1ef93/"
+    },
+    {
+      "tag": "SW.Enchantment.GravityPulse",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": null
+        },
+        {
+          "tier": "II",
+          "value": null
+        },
+        {
+          "tier": "III",
+          "value": null
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/gravitypulse-4197bc6e4b/"
+    },
+    {
+      "tag": "SW.Enchantment.Radiance",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon",
+        "SW.ItemSlot.Equipment.RangedWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.2
+        },
+        {
+          "tier": "II",
+          "value": 0.35
+        },
+        {
+          "tier": "III",
+          "value": 0.5
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/radiance-6f40d570da/"
+    },
+    {
+      "tag": "SW.Enchantment.HealthSynergy",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.15
+        },
+        {
+          "tier": "II",
+          "value": 0.25
+        },
+        {
+          "tier": "III",
+          "value": 0.35
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/healthsynergy-eb86234c02/"
+    },
+    {
+      "tag": "SW.Enchantment.Channeling",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.6
+        },
+        {
+          "tier": "II",
+          "value": 0.75
+        },
+        {
+          "tier": "III",
+          "value": 0.9
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/channeling-ba539ae77c/"
+    },
+    {
+      "tag": "SW.Enchantment.Piercing",
+      "slots": [
+        "SW.ItemSlot.Equipment.RangedWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 1.0
+        },
+        {
+          "tier": "II",
+          "value": 3.0
+        },
+        {
+          "tier": "III",
+          "value": 5.0
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/piercing-e130e2d840/"
+    },
+    {
+      "tag": "SW.Enchantment.PoisonFog",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.1
+        },
+        {
+          "tier": "II",
+          "value": 0.2
+        },
+        {
+          "tier": "III",
+          "value": 0.3
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/poisonfog-a8304ae1bc/"
+    },
+    {
+      "tag": "SW.Enchantment.LingeringPower",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.2
+        },
+        {
+          "tier": "II",
+          "value": 0.3
+        },
+        {
+          "tier": "III",
+          "value": 0.4
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/lingeringpower-42cdda52a1/"
+    },
+    {
+      "tag": "SW.Enchantment.Ricochet",
+      "slots": [
+        "SW.ItemSlot.Equipment.RangedWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 1.0
+        },
+        {
+          "tier": "II",
+          "value": 2.0
+        },
+        {
+          "tier": "III",
+          "value": 3.0
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/ricochet-dab8e656d7/"
+    },
+    {
+      "tag": "SW.Enchantment.ShadowStrike",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon",
+        "SW.ItemSlot.Equipment.RangedWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.15
+        },
+        {
+          "tier": "II",
+          "value": 0.2
+        },
+        {
+          "tier": "III",
+          "value": 0.35
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/shadowstrike-aca945452d/"
+    },
+    {
+      "tag": "SW.Enchantment.GuardingStrike",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon",
+        "SW.ItemSlot.Equipment.RangedWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.1
+        },
+        {
+          "tier": "II",
+          "value": 0.2
+        },
+        {
+          "tier": "III",
+          "value": 0.4
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/guardingstrike-a4fd58db19/"
+    },
+    {
+      "tag": "SW.Enchantment.Shockwave",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": null
+        },
+        {
+          "tier": "II",
+          "value": null
+        },
+        {
+          "tier": "III",
+          "value": null
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/shockwave-1b0321ea75/"
+    },
+    {
+      "tag": "SW.Enchantment.MultiRoll",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings",
+        "SW.ItemSlot.Equipment.Armor.Chest"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 1.0
+        },
+        {
+          "tier": "II",
+          "value": 2.0
+        },
+        {
+          "tier": "III",
+          "value": 3.0
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/multiroll-cf475d68ae/"
+    },
+    {
+      "tag": "SW.Enchantment.SoulFireAspect",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.5
+        },
+        {
+          "tier": "II",
+          "value": 0.6
+        },
+        {
+          "tier": "III",
+          "value": 0.75
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/soulfireaspect-91d0db30d0/"
+    },
+    {
+      "tag": "SW.Enchantment.SpringLoaded",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 4.0
+        },
+        {
+          "tier": "II",
+          "value": 5.0
+        },
+        {
+          "tier": "III",
+          "value": 6.0
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/springloaded-e69be1f064/"
+    },
+    {
+      "tag": "SW.Enchantment.Swirling",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon",
+        "SW.ItemSlot.Equipment.RangedWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.5
+        },
+        {
+          "tier": "II",
+          "value": 0.75
+        },
+        {
+          "tier": "III",
+          "value": 1.0
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/swirling-ca9258c53a/"
+    },
+    {
+      "tag": "SW.Enchantment.TempoTheft",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon",
+        "SW.ItemSlot.Equipment.RangedWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": 0.3
+        },
+        {
+          "tier": "II",
+          "value": 0.4
+        },
+        {
+          "tier": "III",
+          "value": 0.5
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/tempotheft-90231394e5/"
+    },
+    {
+      "tag": "SW.Enchantment.Thundering",
+      "slots": [
+        "SW.ItemSlot.Equipment.MeleeWeapon",
+        "SW.ItemSlot.Equipment.RangedWeapon"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": null
+        },
+        {
+          "tier": "II",
+          "value": null
+        },
+        {
+          "tier": "III",
+          "value": null
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/thundering-0f737c622d/"
+    },
+    {
+      "tag": "SW.Enchantment.BurstBowstring",
+      "slots": [
+        "SW.ItemSlot.Equipment.Armor.Boots",
+        "SW.ItemSlot.Equipment.Armor.Chest",
+        "SW.ItemSlot.Equipment.Armor.Helmet",
+        "SW.ItemSlot.Equipment.Armor.Leggings"
+      ],
+      "tiers": [
+        {
+          "tier": "I",
+          "value": null
+        },
+        {
+          "tier": "II",
+          "value": null
+        },
+        {
+          "tier": "III",
+          "value": null
+        }
+      ],
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/burstbowstring-7f13be0254/"
+    }
+  ]
+}

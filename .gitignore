@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+build/
+dist/
+*.spec
+preview*.png
+*.sav
+*.bak
+*.mcd2tmp
+*.restoretmp
+settings.json
+Backups/
+Verification/

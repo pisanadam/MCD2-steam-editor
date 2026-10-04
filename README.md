@@ -94,4 +94,3 @@ Game images belong to Mojang/Microsoft and their respective rights holders. This
 Program ilk açılışta İngilizcedir. **Settings → Language → Türkçe** seçeneğiyle Türkçe yapabilirsiniz; seçim sonraki açılışta korunur. **Steam kaydını bul** ile karakteri açın, düzenleyin, oyun kapalıyken **Kaydı oyuna uygula** düğmesine basın. Önce otomatik yedek alınır. **Envanter görünümü** bütün eşyaları gösterir; **Eşya ekle** mevcut bir eşyadan kuşanılmamış kopya ekler.
 
 Enchantment slot/tier data and the documented save schema were checked against [Tonystukl/MCD2SaveEdit](https://github.com/Tonystukl/MCD2SaveEdit). Its MIT notice is included in `third-party/MCD2SaveEdit-LICENSE.txt`.
-
