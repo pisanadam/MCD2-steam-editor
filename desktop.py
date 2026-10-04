@@ -187,7 +187,7 @@ def main():
     api=Api()
     title='Dungeons II Forge — Steam Kayıt Düzenleyici' if api.get_settings()['language']=='tr' else 'Dungeons II Forge — Steam Save Editor'
     api._window=webview.create_window(title,url=(ROOT/'index.html').as_uri(),js_api=api,width=1380,height=920,min_size=(850,620),background_color='#111716')
-    webview.start(gui='edgechromium',private_mode=True)
+    webview.start(gui='edgechromium',private_mode=True,icon=str(ROOT/'forge-icon.ico' if (ROOT/'forge-icon.ico').is_file() else ROOT/'assets/app/forge-icon.ico'))
 
 if __name__=='__main__':
     try:

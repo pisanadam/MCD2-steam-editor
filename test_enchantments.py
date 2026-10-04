@@ -42,6 +42,27 @@ with sync_playwright() as p:
     assert len(json.loads(current)['CharacterSaveV1']['Inventory']['Entries'][0]['ItemData']['Effects'])==2
     page.locator('#native-unenchant').click()
     assert json.loads(page.evaluate('DungeonsNative.getText()'))['CharacterSaveV1']['Inventory']['Entries'][0]['ItemData']['Effects']==[effect]
+    # Thundering III's saved intensity comes from an observed native offline save.
+    # An absent upstream value must not silently hide this verified tier.
+    for gear in ['SW.Item.Sword','SW.Item.DualCrossbow']:
+        fixture['CharacterSaveV1']['Inventory']['Entries'][0]['ItemData']['TypeTag']=gear
+        page.evaluate('(text)=>DungeonsNative.read(new TextEncoder().encode(text),"test.sav")',json.dumps(fixture,separators=(',',':')))
+        page.locator('[data-native-tab="items"]').click()
+        page.locator('#native-enchant').click()
+        choice=page.locator('[data-enchantment-tag="SW.Enchantment.Thundering"]')
+        assert choice.count()==1
+        assert choice.locator('img').evaluate('e=>e.complete&&e.naturalWidth>0')
+        choice.click()
+        assert page.locator('#enchantment-tier option').evaluate_all('els=>els.map(e=>e.value)')==['III']
+        page.locator('#enchantment-apply').click()
+        current=page.evaluate('DungeonsNative.getText()')
+        batches=json.loads(current)['CharacterSaveV1']['Inventory']['Entries'][0]['ItemData']['Effects']
+        enchant=next(b for b in batches if b['TypeTag']=='SW.Item.Effect.Enchantment')['EffectsInThisBatch'][0]
+        assert enchant['TypeTag']=='SW.Enchantment.Thundering'
+        assert enchant['Intensity']==0.5
+        assert enchant['GeneratorData']['GeneratorParentTemplate']=='SW.Enchantment.Thundering.III'
+        assert batches[0]==effect
+        assert '90071992547409931234' in current
     assert not errors,errors
     browser.close()
 print('PASS: compatible enchantment picker, correct tier/intensity, replacement/removal and exact preservation of other effects and large numbers.')

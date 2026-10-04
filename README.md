@@ -98,3 +98,5 @@ Program ilk açılışta İngilizcedir. **Settings → Language → Türkçe** s
 Enchantment slot/tier data and the documented save schema were checked against [Tonystukl/MCD2SaveEdit](https://github.com/Tonystukl/MCD2SaveEdit). Its MIT notice is included in `third-party/MCD2SaveEdit-LICENSE.txt`.
 
 Custom effect values are verified with synthetic save tests. Their in-game persistence and actual combat effect must be checked after loading; the game may cap or recalculate them.
+
+Thundering III is available for melee and ranged weapons. Its saved intensity 0.5 was observed in an existing offline Steam save; I/II are omitted until their saved values are verified. The EXE includes an original generated forge icon (PNG source and multi-resolution ICO in `assets/app/`).

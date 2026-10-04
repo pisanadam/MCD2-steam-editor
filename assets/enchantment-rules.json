@@ -693,10 +693,16 @@
         },
         {
           "tier": "III",
-          "value": null
+          "value": 0.5
         }
       ],
-      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/thundering-0f737c622d/"
+      "source": "https://www.mcshuo.com/minecraft-dungeons-2/database/enchantments/thundering-0f737c622d/",
+      "valueEvidence": {
+        "tier": "III",
+        "value": 0.5,
+        "source": "Observed in an existing local offline Steam save; no personal save data included.",
+        "notes": "Tiers I and II remain unknown and are not offered for new application."
+      }
     },
     {
       "tag": "SW.Enchantment.BurstBowstring",

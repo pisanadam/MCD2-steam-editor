@@ -34,7 +34,7 @@ function optionsFor(x){
  if(k==='TypeTag'&&p.includes('Effects')&&icons){const entry=iconEntry(value)||iconEntry(val([...p.slice(0,-1),'GeneratorData','GeneratorParentTemplate']));if(entry)return [{value,name:entry.name}];}
  if(k==='GeneratorParentTemplate'&&/\.(I|II|III)$/.test(value)){
   const prefix=value.replace(/\.(I|II|III)$/,''),entry=iconEntry(value);
-  if(entry?.nativeFields?.tiers)return entry.nativeFields.tiers.map(t=>({value:prefix+'.'+(t.Tier||t.tier),name:tierName(t.Tier||t.tier)}));
+  if(entry?.nativeFields?.tiers)return entry.nativeFields.tiers.filter(t=>typeof (t.Value??t.value)==='number'&&Number.isFinite(t.Value??t.value)).map(t=>({value:prefix+'.'+(t.Tier||t.tier),name:tierName(t.Tier||t.tier)}));
   const candidates=icons?.entries.filter(e=>e.tag?.replace(/\.(I|II|III)$/,'')===prefix&&/\.(I|II|III)$/.test(e.tag));
   if(candidates?.length)return candidates.map(e=>({value:e.tag,name:tierName(e.nativeFields?.tier||e.tag.split('.').at(-1))}));
  }
