@@ -33,7 +33,7 @@ with sync_playwright() as p:
     fixture['CharacterSaveV1']['Inventory']['Entries'][0]['ItemData']['Effects']=rows
     page.evaluate('(text)=>DungeonsNative.read(new TextEncoder().encode(text),"test.sav")',json.dumps(fixture,separators=(',',':')))
     page.locator('[data-native-tab="items"]').click()
-    page.locator('#native-enchant').click()
+    page.locator('[data-enchantment-edit]').first.click()
     page.locator('[data-enchantment-tag="SW.Enchantment.FireAspect"]').click()
     page.locator('#enchantment-tier').select_option('III')
     page.locator('#enchantment-apply').click()
@@ -59,7 +59,7 @@ with sync_playwright() as p:
         page.locator('#enchantment-apply').click()
         current=page.evaluate('DungeonsNative.getText()')
         batches=json.loads(current)['CharacterSaveV1']['Inventory']['Entries'][0]['ItemData']['Effects']
-        enchant=next(b for b in batches if b['TypeTag']=='SW.Item.Effect.Enchantment')['EffectsInThisBatch'][0]
+        enchant=next(e for b in batches if b['TypeTag']=='SW.Item.Effect.Enchantment' for e in b['EffectsInThisBatch'] if e['TypeTag']=='SW.Enchantment.Thundering')
         assert enchant['TypeTag']=='SW.Enchantment.Thundering'
         assert enchant['Intensity']==0.5
         assert enchant['GeneratorData']['GeneratorParentTemplate']=='SW.Enchantment.Thundering.III'

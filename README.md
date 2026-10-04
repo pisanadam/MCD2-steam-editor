@@ -102,3 +102,7 @@ Custom effect values are verified with synthetic save tests. Their in-game persi
 Thundering III is available for melee and ranged weapons. Its saved intensity 0.5 was observed in an existing offline Steam save; I/II require an explicit custom value because their saved defaults are not verified. The EXE includes an original generated forge icon (PNG source and multi-resolution ICO in `assets/app/`).
 
 All 32 standard enchantments are included in the picker for their compatible slots, including the six with missing upstream intensity data. Every I/II/III tier is visible. Known values are prefilled; tiers without a known saved value require an explicit custom intensity before Apply is enabled. No zero or guessed default is silently written. The two unique-only catalog entries remain intrinsic unique item effects, not standard enchantment books.
+
+## Multiple enchantments and properties
+
+**Add enchantment** appends a new enchantment without replacing existing ones. **Add property** appends a catalog equipment effect. Each icon card has an individual Change/Remove action; **Clear enchantments** removes all enchantments while preserving equipment properties. Each addition/removal is undoable and existing unknown tokens are preserved. Multiple enchantments are supported in the editor; their simultaneous in-game behavior has not been verified and the game may limit, ignore or recalculate unsupported combinations.

@@ -282,5 +282,17 @@
   "Bu kademe için özel etki değeri gir.": "Enter a custom effect value for this tier.",
   "Katalog değeri dolduruldu. İstersen özel değer yazabilirsin.": "Catalog value filled in. You may enter a custom value.",
   "Bu kademenin kayıt değeri eksik. Özel değer gir; oyunda doğrula.": "The saved value for this tier is unknown. Enter a custom value and check it in game.",
-  "Özel değer gerekli": "Custom value required"
+  "Özel değer gerekli": "Custom value required",
+  "Büyü ekle": "Add enchantment",
+  "Özellik ekle": "Add property",
+  "Büyüleri temizle": "Clear enchantments",
+  "Büyüyü değiştir": "Change enchantment",
+  "Kaldır": "Remove",
+  "Yalnız seçili büyü değiştirilir. Diğer büyüler korunur.": "Only the selected enchantment is replaced. Other enchantments are preserved.",
+  "Yeni büyü eklenir. Mevcut büyüler ve özellikler korunur.": "Adds a new enchantment. Existing enchantments and properties are preserved.",
+  "Birden fazla büyünün birlikte çalışması oyunda doğrulanmış değildir.": "Multiple enchantments working together have not been verified in game.",
+  "Yeni özellik eklenir. Mevcut büyüler ve özellikler korunur. Her birleşimi oyunda kontrol et.": "Adds a new property while preserving existing enchantments and properties. Check each combination in game.",
+  "Bu büyünün düzenleme alanları eksik.": "This enchantment is missing required editing fields.",
+  "Bu eşyanın etki listesi eksik.": "This item is missing its effect list.",
+  "Etki bulunamadı.": "Effect not found."
 }
